@@ -21,6 +21,11 @@ Install [`Django`](https://www.djangoproject.com/) to your system by using this 
 pip install django
 ```
 
+We have shared `requirement.txt` file with this repo. You can also install all required libraries by following this command
+
+```commandline
+pip install -r requirement.txt
+```
 
 If done, create a new project file by typing this
 
