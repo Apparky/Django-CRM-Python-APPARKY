@@ -94,6 +94,7 @@ def add_cst(request):
 def update_cst(request, pk):
     if request.user.is_authenticated:
         the_record = Record.objects.get(id=pk)
+        datas = Record.objects.get(id=pk)
         form = AddRecordForm(request.POST or None, instance=the_record)
         if form.is_valid():
             form.save()
