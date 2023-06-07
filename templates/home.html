@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}
+My CRM
+{% endblock title %}
+
+{% block body %}
+
+    {% if user.is_authenticated %}
+
+      <h1>Welcome to Django CRM..!</h1>
+
+      <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Zipcode</th>
+            <th scope="col">Created At</th>
+            <th scope="col">ID</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      {% if datas %}
+
+        {% for data in datas %}
+
+        <tr>
+          <td>{{ data.first_name }} {{ data.last_name }}</td>
+          <td>{{ data.email }}</td>
+          <td>{{ data.phone }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.city }}</td>
+          <td>{{ data.state }}</td>
+          <td>{{ data.zipcode }}</td>
+          <td>{{ data.created_at }}</td>
+          <td><a href="{% url 'record' data.id %}">{{ data.id }}</a></td>
+        </tr>
+
+        {% endfor %}
+
+      {% endif %}
+
+    {% else %}
+
+    <div class="col-md-6 offset-md-3">
+      <h1>Login</h1>
+      <form class="" action="{% url "home" %}" method="post">
+          {% csrf_token %}
+          <br/>
+
+          <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" name='username' placeholder='User Name' required>
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-secondary">Login</button>
+            </form>
+
+      </form>
+    </div>
+    {% endif %}
+
+
+{% endblock body %}
