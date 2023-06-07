@@ -31,7 +31,7 @@ If done, create a new project file by typing this
 
 ```commandline
 django-admin startproject YOURPROJECTNAME .
-# In this project is the name of it is MyShop.
+# In this project is the name of it is MyCRM.
 ```
 
 That's all. All your Native file will be created to yhe folder, and you are ready to start
