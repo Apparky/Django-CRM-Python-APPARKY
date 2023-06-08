@@ -106,5 +106,3 @@ def update_cst(request, pk):
         messages.error(request, 'Something went Wrong....!!')
         return redirect('home')
 
-
-
