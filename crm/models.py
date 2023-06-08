@@ -16,3 +16,15 @@ class Record(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
+class OurLogo(models.Model):
+    title = models.CharField(max_length=40, default='Logo Title', null=False, blank=True)
+    logo_img = models.ImageField(null=False, blank=False, upload_to='midea/images/')
+    logo_alt = models.CharField(max_length=100, null=True, blank=True, default='')
+
+    def __str__(self):
+        return self.title
+
+
+

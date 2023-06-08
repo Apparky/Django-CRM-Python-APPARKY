@@ -1,6 +1,7 @@
 django
 mysql
 mysql-connector-python
+Pillow
 # mysql-connector
 
 

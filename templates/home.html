@@ -47,13 +47,16 @@ My CRM
 
     {% else %}
 
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-6 offset-md-3" style="background-image: url('img/LoginPage.png')">
       <h1>Login</h1>
+      {% load static %}
       <form class="" action="{% url "home" %}" method="post">
           {% csrf_token %}
           <br/>
+          {% include 'login.html' %}
 
-          <form>
+          <!--
+          <form style='backgroung-image url('img/LoginPage.png')'>
               <div class="mb-3">
                 <input type="text" class="form-control" name='username' placeholder='User Name' required>
               </div>
@@ -63,8 +66,10 @@ My CRM
               <br>
               <button type="submit" class="btn btn-secondary">Login</button>
             </form>
+          -->
 
       </form>
+
     </div>
     {% endif %}
 
