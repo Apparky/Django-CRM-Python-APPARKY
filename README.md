@@ -1,4 +1,4 @@
-# Django-CRM-Python-APPARKY
+# Basic-Django-CRM-Python-APPARKY
 
 
 > In this Django Project we have designed a basic CRM system 
