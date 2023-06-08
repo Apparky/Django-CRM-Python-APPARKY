@@ -8,7 +8,7 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Welcome to Django')
+    return HttpResponse('<h2>Welcome to Django</h2>')
 
 
 def home(request):
